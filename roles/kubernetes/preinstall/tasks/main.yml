@@ -1,4 +1,9 @@
 ---
+- name: disable firewalld
+  service:
+    name: firewalld
+    state: stopped
+    enabled: false
 # Disable swap
 - import_tasks: 0010-swapoff.yml
   when:
